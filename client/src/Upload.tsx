@@ -11,7 +11,7 @@ const Upload = function() {
             <Input type='file' style={{width: 300}} onChange={handleChange}/>
         </Col>
         <Col span={12}>
-
+            
         </Col>
     </Row>
   </div>)
