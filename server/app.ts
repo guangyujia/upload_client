@@ -26,6 +26,7 @@ app.post('/upload/:filename/:chunk_name', async function(req:Request, res:Respon
      await fs.mkdirs(chunk_dir);
    }
    let chunkFilePath = path.resolve(chunk_dir, chunk_name);
+   // flags: 'a'  append 后面做断点续传
    let ws = fs.createWriteStream(chunkFilePath, {start: 0, flags: 'a'});
    req.on('end', () => {
     ws.close();
